@@ -29,7 +29,7 @@ public class PhotoWriterHandler implements CommandHandler {
 	private String processSubmit(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		req.setCharacterEncoding("UTF-8");
 		ServletContext context = req.getServletContext();
-		String path = context.getRealPath("upload");//경로 설정
+		String path = context.getRealPath("photo");//경로 설정
 		String encType = "UTF-8";
 		int sizeLimit = 20 * 1024 * 1024;//사진크기 제한
 		MultipartRequest multi = new MultipartRequest(req, path, sizeLimit,

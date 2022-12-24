@@ -25,7 +25,7 @@
 					<div class="home_main">
 						<div class="profile">
 							<div class="profile_1"><!-- 로그인된 유저의 사진을 출력 -->
-								<img class="profile_image" src="../upload/${loginUser.photoUrl}"/>
+								<img class="profile_image" src="../photo/${loginUser.photoUrl}"/>
 							</div>
 							
 							<div class="profile_3">
@@ -64,10 +64,10 @@
 									</form>
 									<c:choose>
 										<c:when test="${empty photo.photoUrl}"><!-- 등록되어있는 사진이 없으면 실행 -->
-											<img src="../upload/noimage.gif">
+											<img src="../photo/noimage.gif">
 										</c:when>
 										<c:otherwise><!-- 등록되어있는 사진이 있을 경우 실행 -->
-											<img src="../upload/${photo.photoUrl}"style = "width:350px; height:350px; "><!-- 등록한 사진을 출력 -->
+											<img src="../photo/${photo.photoUrl}"style = "width:350px; height:350px; "><!-- 등록한 사진을 출력 -->
 										</c:otherwise>
 									</c:choose>
 									<div class="photo_text">${photo.content }</div><!-- 등록한 사진의 내용을 출력 -->
