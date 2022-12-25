@@ -29,7 +29,7 @@
             <div class="home_main">
               <div class="profile">
                 <div class="profile_1">
-                  <img class="profile_image" src="../upload/${loginUser.photoUrl}"/><!-- 로그인한 유저의 사진을 등록 -->
+                  <img class="profile_image" src="../photo/${loginUser.photoUrl}"/><!-- 로그인한 유저의 사진을 등록 -->
                 </div>                
                 <div class="profile_3">
                   <div class="profile-dropdown">

@@ -33,7 +33,7 @@ public class JoinHandler implements CommandHandler {
 		String url = "/member/loginForm.jsp";//이동해야할 url을 변수에 저장
 		request.setCharacterEncoding("UTF-8");
 		ServletContext context = request.getServletContext();
-		String path = context.getRealPath("upload");//경로 설정
+		String path = context.getRealPath("photo");//경로 설정
 		String encType = "UTF-8";
 		int sizeLimit = 20 * 1024 * 1024;//사진크기 제한
 		MultipartRequest multi = new MultipartRequest(request, path, sizeLimit,

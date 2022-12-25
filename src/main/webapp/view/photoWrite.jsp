@@ -25,7 +25,7 @@
 					<div class="home_main">
 						<div class="profile">
 							<div class="profile_1"><!-- 로그인된 유저의 사진을 출력 -->
-								<img class="profile_image" src="../upload/${loginUser.photoUrl}"/>
+								<img class="profile_image" src="../photo/${loginUser.photoUrl}"/>
 							</div>
 							
 							<div class="profile_3">

@@ -26,7 +26,7 @@
 					<div class="home_main">
 						<div class="profile">
 							<div class="profile_1"><!-- 로그인된 유저의 사진을 출력 -->
-								<img class="profile_image" src="../upload/${loginUser.photoUrl}"/>
+								<img class="profile_image" src="../photo/${loginUser.photoUrl}"/>
 							</div>
 							
 							<div class="profile_3">
@@ -58,10 +58,10 @@
 										<div class="visit_picture visit_background3">
 											<c:choose>
 												<c:when test="${empty vlist.photoUrl}"><!-- 방명록에 사진이 없을경우 실행 -->
-													<img src="../upload/noimage.gif">
+													<img src="../photo/noimage.gif">
 												</c:when>
 												<c:otherwise><!-- 방명록에 사진이 있을경우 실행 -->
-													<img src="../upload/${vlist.photoUrl}"style = "width:150px; height:150px; "><!-- 사진을 출력 -->
+													<img src="../photo/${vlist.photoUrl}"style = "width:150px; height:150px; "><!-- 사진을 출력 -->
 												</c:otherwise>
 											</c:choose>
 										</div>

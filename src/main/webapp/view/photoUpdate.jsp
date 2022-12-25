@@ -25,7 +25,7 @@
 					<div class="home_main">
 						<div class="profile">
 							<div class="profile_1"><!-- 로그인된 유저의 사진을 출력 -->
-								<img class="profile_image" src="../upload/${loginUser.photoUrl}"/>
+								<img class="profile_image" src="../photo/${loginUser.photoUrl}"/>
 							</div>
 							<div class="profile_3">
 								<div class="profile-dropdown">
@@ -52,10 +52,10 @@
 										<td>
 											<c:choose>
 												<c:when test="${empty photo.photoUrl}"><!-- 사진이 비어있을경우 출력 -->
-													<img src="../upload/noimage.gif">
+													<img src="../photo/noimage.gif">
 												</c:when>
 												<c:otherwise><!-- 사진이 있을경우 출력 -->
-													<img src="../upload/${photo.photoUrl}"style = "width:350px; height:350px; "><!-- 가져온 사진을 출력 -->
+													<img src="../photo/${photo.photoUrl}"style = "width:350px; height:350px; "><!-- 가져온 사진을 출력 -->
 												</c:otherwise>
 											</c:choose>
 										<td>
