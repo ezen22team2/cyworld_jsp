@@ -7,9 +7,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>로그인 폼</title>
 <script type="text/javascript" src="../js/member.js"></script>
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/cyworld_login_layout.css" />
 </head>
 <body>
-	<h2>로그인</h2>
+<div id="wrap">
+	<h2 id="h2_id">로그인</h2>
 	<form action='<c:url value="/member/login.do" />' method="post" name="frm"><!-- 로그인 정보를 확인하는 form 태그 -->
 		<table>
 			<tr>
@@ -35,5 +38,6 @@
 			</tr>
 		</table>
 	</form>
+</div>
 </body>
 </html>
