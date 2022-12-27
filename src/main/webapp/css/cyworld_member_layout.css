@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+/*reset*/
+div,form,p,h3,tr,td{margin:0;padding:0;}
+body{font:normal 13px/1.5em Arial,sans-serif;color:#333333;background-color:#ea5f1c;}
+
+div{
+	text-align:center;
+	width:350px;height:400px;
+	margin:190px auto;
+	background-color:white;
+	border-radius:10px;
+}
+p{padding-top:50px;}
+h2{padding-top:10px;color:#ea5f1c;}
+table{padding-left:75px;}
+table tr td{text-align:center;padding-bottom:30px;}
+table input{
+	border:none;
+	display:block;
+	margin:0 auto;
+	width:200px;height:35px;
+	border-radius:8px;
+}
+table input:hover{
+	cursor:pointer;
+	background-color:#ea5f1c;
+	color:white;
+}

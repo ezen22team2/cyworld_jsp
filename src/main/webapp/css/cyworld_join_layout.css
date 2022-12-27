@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+/*reset*/
+div,form,p,h3,tr,td{margin:0;padding:0;}
+body{font:normal 15px/1.5em Arial,sans-serif;color:#333333;background-color:#ea5f1c;}
+
+#wrap{
+	width:500px; height:800px;
+	margin:100px auto;
+	background-color:white;
+}
+#img_id{padding-top:50px;}
+h2{color:black;font-size:28px;}
+#star{color:#333333;margin-top:10px;margin-bottom:5px;font-size:15px;}
+#table_id{
+	width:490px;height:500px;
+	padding-left:55px;
+	padding-top:10px;
+}
+#table_id tr td{
+	height:55px;
+	margin-bottom:10px;
+	font-size:15px;
+	font-weight:bold;
+}
+.input1{
+	width:260px;height:45px;
+	background-color:#f1f3f4;
+	border:none;
+	outline:none;
+	text-indent: 10px;
+	text-align:center;
+	border-radius:10px;
+}
+#button_id{
+	border:none;
+	height:40px;
+	background-color:#cccccc;
+	border-radius:8px;
+	cursor:pointer;
+}
+#button_id:hover{background-color:#ea5f1c;color:white;}
+#button_id2{
+	cursor:pointer;
+	outline:none;
+	border:none;
+	padding-left:30px;
+}
+#radio_wrap{
+	padding-left:30px;
+}
+.radio_btn{
+	padding-left:50px;
+	margin-left:10px;
+}
+.input3{
+	border:none;
+	width:100px;height:40px;
+	background-color:#cccccc;
+	border-radius:8px;
+	cursor:pointer;
+}
+.input3:hover{background-color:#ea5f1c;color:white;}
+
+
+
