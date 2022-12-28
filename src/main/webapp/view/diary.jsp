@@ -57,7 +57,7 @@
                   	<button onclick="location.href='../diary/write.do'" style="float: right;">글쓰기</button><!-- 다이어리에 글쓰기 페이지로 이동하는 버튼 -->
                   	</div>
                   <div class="diary">
-                    <div class="diary_contents">
+                  <div class="diary_contents">
                   
                    <c:forEach var="diary" items="${diary}"><!-- 등록되어 있는 다이어리를 출력 -->
                         <div class="diary_date">${diary.updatedate }</div><!-- 다이어리가 작성된 날짜를 출력 -->
@@ -89,30 +89,30 @@
 								</c:choose>
 							</c:forEach>
 			                <div class="w3-border w3-padding" style="border: 1px solid;'">
-							<c:if test="${ loginUser.userid == null }"><!-- 로그인이 되어있지않으면 실행 -->
-								<textarea rows="5" cols="50" class="w3-input w3-border newLogin" readonly>로그인 후 댓글 달기</textarea>
-							</c:if>
-							<c:if test="${ loginUser.userid != null }"><!-- 로그인이 되어있으면 실행 -->
-								<i class="fa fa-user w3-padding-16"></i> ${ loginUser.userid }<!-- 유저아이디를 출력 -->
-								<form action="../reply/reply.do" method="post"><!-- 댓글을 등록하는 form 태그 -->
-									<input type="hidden" name="bno" id="no" value="${ diary.bno }"> <!-- 다이어리의 프라이머리키를 히든값에 저장 -->
-									<input type="hidden" name="userid" id="id" value="${loginUser.userid }"><!-- 로그인되어있는 아이디를 히든값에 저장 -->
-									<!-- 댓글을 입력할 수 있는 텍스트창 -->
-									<textarea rows="5" cols="50" class="w3-input w3-border" placeholder="댓글 작성" name="content" id="reply_content"></textarea>
-									<input type="submit" class="w3-button w3-border" id="reply_btn" value="댓글 등록"><!-- 댓글을 등록하는 버튼 -->
-								</form>
-							</c:if>
-						</div>
+								<c:if test="${ loginUser.userid == null }"><!-- 로그인이 되어있지않으면 실행 -->
+									<textarea rows="5" cols="50" class="w3-input w3-border newLogin" readonly>로그인 후 댓글 달기</textarea>
+								</c:if>
+								<c:if test="${ loginUser.userid != null }"><!-- 로그인이 되어있으면 실행 -->
+									<i class="fa fa-user w3-padding-16"></i> ${ loginUser.userid }<!-- 유저아이디를 출력 -->
+									<form action="../reply/reply.do" method="post"><!-- 댓글을 등록하는 form 태그 -->
+										<input type="hidden" name="bno" id="no" value="${ diary.bno }"> <!-- 다이어리의 프라이머리키를 히든값에 저장 -->
+										<input type="hidden" name="userid" id="id" value="${loginUser.userid }"><!-- 로그인되어있는 아이디를 히든값에 저장 -->
+										<!-- 댓글을 입력할 수 있는 텍스트창 -->
+										<textarea rows="5" cols="50" class="w3-input w3-border" placeholder="댓글 작성" name="content" id="reply_content"></textarea>
+										<input type="submit" class="w3-button w3-border" id="reply_btn" value="댓글 등록"><!-- 댓글을 등록하는 버튼 -->
+									</form>
+								</c:if>
+							</div>
 	  				</div>                     
     				</c:forEach>
                     </div>
-                    <button id="button" onclick="getTextFile()"><i class="fas fa-paw"></i> 티벳토끼의 비밀일기</button>
+                    <!-- <button id="button" onclick="getTextFile()"><i class="fas fa-paw"></i> 티벳토끼의 비밀일기</button>
                     <div class="diary_contents" id="hidden">
                       <div class="diary_date">티벳토끼의 비밀일기</div>
                         <div class="diary_text">
                           <div id="secret_txt"></div>                        
                         </div>
-                    </div>
+                    </div> -->
                   </div>
               </div>
             </div>

@@ -45,8 +45,8 @@ public class PhotoDAO {
 		try (Connection conn = DBManager.getConnection();//데이터베이스와 통신
 				PreparedStatement pstmt = conn.prepareStatement(sql); ) {//변수에 담아놓은 쿼리문을 데이터베이스에 넣어줌.
 			pstmt.setString(1, pVo.getTitle());//1번째로 받는 데이터는 사진첩제목.
-			pstmt.setString(2, pVo.getContent());//1번째로 받는 데이터는 사진첩내용.
-			pstmt.setString(3, pVo.getPhotoUrl());//1번째로 받는 데이터는 사진url.
+			pstmt.setString(2, pVo.getContent());//2번째로 받는 데이터는 사진첩내용.
+			pstmt.setString(3, pVo.getPhotoUrl());//3번째로 받는 데이터는 사진url.
 			pstmt.executeUpdate();
 		}
 		catch(Exception e) {
@@ -96,6 +96,7 @@ public class PhotoDAO {
 				pstmt.setString(2, pVo.getContent());//2번째로 받는 데이터는 사진첩내용.
 				pstmt.setString(3, pVo.getPhotoUrl());//3번째로 받는 데이터는 사진url.
 				pstmt.setInt(4, pVo.getBno());//4번째로 받는 데이터는 사진첩번호.
+				pstmt.executeUpdate();
 		}
 		catch(Exception e) {
 			e.printStackTrace();

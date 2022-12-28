@@ -45,6 +45,7 @@
 							</div>
 						</div>
 						<div class="home_contents">
+						
 							<!-- 방명록을 등록하는 페이지로 이동하는 버튼 -->
 							<input type = "button" value = "등록하기" style = "float:right;"onclick = "location.href = '../visit/visitWrite.do'">
 							<div class="visit_contents" style = "margin-top:25px;">
@@ -79,6 +80,38 @@
 									</form>
 									</c:if>
 									</div>
+									<br/>
+									<hr/>
+									<!-- 추가 -->
+									<c:forEach var="reply_vs" items="${reply_vs}"><!-- 댓글을 가져와서 출력 -->
+                  				<c:set var = "dno" value = "${visit.bno }"/><!-- 다이어리의 프라이머리키를 value값에 세팅 -->
+                  				<c:set var = "rno" value = "${reply_vs.bno }"/><!-- 댓글의 프라이머리키를 value값에 세팅 -->
+                  				<c:choose>
+                  					<c:when test = "${dno==rno }"><!-- 댓글의 프라이머리키와 다이어리의 프라이머리키가 같으면 실행 -->
+			                  			<form action = "../reply_vs/reply_vsdelete.do" method = "post"><!-- 댓글을 삭제하기위한 form태그 -->
+			                  				<input type = "hidden" name = "rno" value = "${reply_vs.rno }"><!-- 댓글의 프라이머리키를 value값에 저장 -->
+											<input type = "submit" value = "X" style = "float:right;"><!-- 댓글을 삭제하는 버튼 -->
+										</form>
+										${reply_vs.userid } ${reply_vs.updatedate } : ${reply_vs.content } <br>	<!-- 댓글을 작성한 유저아이디와 댓글을 작성한 날짜와 작성한 댓글을 출력 -->
+									</c:when>
+								</c:choose>
+							</c:forEach>
+			                <div class="w3-border w3-padding" style="border: 1px solid;'">
+								<c:if test="${ loginUser.userid == null }"><!-- 로그인이 되어있지않으면 실행 -->
+									<textarea rows="5" cols="50" class="w3-input w3-border newLogin" readonly>로그인 후 댓글 달기</textarea>
+								</c:if>
+								<c:if test="${ loginUser.userid != null }"><!-- 로그인이 되어있으면 실행 -->
+									<i class="fa fa-user w3-padding-16"></i> ${ loginUser.userid }<!-- 유저아이디를 출력 -->
+									<form action="../reply_vs/reply_vs.do" method="post"><!-- 댓글을 등록하는 form 태그 -->
+										<input type="hidden" name="bno" id="no" value="${ visit.bno }"> <!-- 다이어리의 프라이머리키를 히든값에 저장 -->
+										<input type="hidden" name="userid" id="id" value="${loginUser.userid }"><!-- 로그인되어있는 아이디를 히든값에 저장 -->
+										<!-- 댓글을 입력할 수 있는 텍스트창 -->
+										<textarea rows="5" cols="50" class="w3-input w3-border" placeholder="댓글 작성" name="content" id="reply_content"></textarea>
+										<input type="submit" class="w3-button w3-border" id="reply_btn" value="댓글 등록"><!-- 댓글을 등록하는 버튼 -->
+									</form>
+								</c:if>
+							</div>
+							<!-- 추가 -->
 								</c:forEach>
 							</div>
 						</div>

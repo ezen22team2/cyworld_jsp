@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import common.command.CommandHandler;
-import common.command.NullHandler;
 
 public class ControllerUsingFile extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -64,9 +63,6 @@ public class ControllerUsingFile extends HttpServlet {
     HttpServletResponse response) throws ServletException, IOException {
         String command = request.getParameter("cmd");
         CommandHandler handler = commandHandlerMap.get(command);
-        if (handler == null) {
-            handler = new NullHandler();
-        }
         String viewPage = null;
         try {
             viewPage = handler.process(request, response);

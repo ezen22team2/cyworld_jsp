@@ -31,14 +31,14 @@
 							<div class="profile_3">
 								<div class="profile-dropdown">
 									<div class="dropdown-btn">
-										<div class="dropdown-title">Related Link</div>
+										<div class="dropdown-title">링크 목록</div>
 										<div class="triangle-down"></div>
 									</div>
 									<div class="dropdown-content">
 										<a href="#"
-											target="_blank">Devlog</a> <a
-											href="https://github.com/" target="_blank">Github</a><!-- 깃허브로 이동하는 태그 -->
-										<a href="https://www.instagram.com/" target="_blank">Instagram</a><!-- 인스타로 이동하는 태그 -->
+											target="_blank">새창</a> <a
+											href="https://github.com/" target="_blank">깃허브</a><!-- 깃허브로 이동하는 태그 -->
+										<a href="https://www.instagram.com/" target="_blank">노션</a><!-- 인스타로 이동하는 태그 -->
 									</div>
 								</div>
 							</div>

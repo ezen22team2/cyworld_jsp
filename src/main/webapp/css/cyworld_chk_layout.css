@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+/*reset*/
+div,form,p,h3,tr,td{margin:0;padding:0;}
+body{font:normal 13px/1.5em Arial,sans-serif;color:#333333;}
+
+p{margin-top:17px;}
+h2{color:#ea5f1c;margin-top:1px;}
+
+form{font-size:15px;}
+#input_id{
+	border:none;
+	background-color:#f1f3f4;
+	height:30px;
+	border-radius:5px;
+}
+.check_btn{
+	border:none;
+	width:100px;height:30px;
+	background-color:#cccccc;
+	border-radius:5px;
+	cursor:pointer;
+	font-size:13px;
+}
+.check_btn:hover{background-color:#ea5f1c;color:white;}
+
+

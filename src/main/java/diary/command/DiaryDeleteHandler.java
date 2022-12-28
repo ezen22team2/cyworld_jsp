@@ -13,7 +13,6 @@ public class DiaryDeleteHandler implements CommandHandler {
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		if(req.getMethod().equalsIgnoreCase("GET")) {//get방식으로 오면 실행
 			return null;
-			
 		}
 		else if(req.getMethod().equalsIgnoreCase("POST")) {//post방식으로 오면 실행
 			return processForm(req, res);

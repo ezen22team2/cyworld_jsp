@@ -99,11 +99,17 @@ public class DiaryDAO {
 
 
 	public void deleteDiary(int bno) {
-		String sql = "delete from diary where bno=?";//가져온 다이어리번호와 같은 다이어리 row를 지우는 쿼리문
+		String sql1 = "set foreign_key_checks = 0";
+		String sql2 = "delete from diary where bno=?";//가져온 다이어리번호와 같은 다이어리 row를 지우는 쿼리문	
+		String sql3 = "set foreign_key_checks = 1;";
 		try (Connection conn = DBManager.getConnection();//데이터베이스와 통신
-			PreparedStatement pstmt = conn.prepareStatement(sql); ) {//변수에 담아놓은 쿼리문을 데이터베이스에 넣어줌.
-			pstmt.setInt(1, bno);//1번째로  받는 데이터는 다이어리번호
-			pstmt.executeUpdate();
+			PreparedStatement pstmt1 = conn.prepareStatement(sql1);
+			PreparedStatement pstmt2 = conn.prepareStatement(sql2);
+			PreparedStatement pstmt3 = conn.prepareStatement(sql3);) {//변수에 담아놓은 쿼리문을 데이터베이스에 넣어줌.
+			pstmt2.setInt(1, bno);//1번째로  받는 데이터는 다이어리번호
+			pstmt1.executeUpdate();
+			pstmt2.executeUpdate();
+			pstmt3.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
