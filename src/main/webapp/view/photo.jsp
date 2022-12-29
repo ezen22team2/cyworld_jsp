@@ -46,28 +46,28 @@
 						<div class="home_contents">
 							<div class="photo_contents">
 								<!-- 사진을 등록하는 페이지로 이동하는 버튼 -->
-								<input type = "button" style = "float:right;"value = "등록하기" onclick = "location.href='../photo/photoWrite.do'">
+								<input id="btn" type = "button" style = "float:right;"value = "등록하기" onclick = "location.href='../photo/photoWrite.do'">
 								<c:forEach var = "photo" items = "${photo }"><!-- 등록된 사진을 출력 -->
 									<div class="photo_title"> &emsp;&nbsp;${photo.title }<!-- 사진의 제목을 출력 -->
 										<span class="photo_title_date">${photo.updatedate }</span><!-- 사진을 등록한 날짜를 출력 -->
 									</div>
 									<form action = "../photo/photoDelete.do" method = "post"><!-- 사진을 삭제하는 form태그 -->
 										<input type = "hidden" name = "bno" value = "${photo.bno }"	><!-- 사진의 프라이머리 키를 히든값에 저장 -->
-										<input type = "submit" value = "삭제"style = "float:right;"><!-- 사진을 삭제하는 버튼 -->
+										<input id="btn2" type = "submit" value = "삭제"style = "float:right;"><!-- 사진을 삭제하는 버튼 -->
 									</form>
 									<form action = "../photo/photoUpdate.do" method="get"><!-- 사진을 수정하는 form 태그 -->
 										<input type = "hidden" name = "title" value = "${photo.title }"><!-- 사진의 제목을 히든값에 저장 -->
 										<input type = "hidden" name = "content" value = "${photo.content }"><!-- 사진의 내용을 히든값에 저장 -->
 										<input type = "hidden" name = "bno" value = "${photo.bno }"	><!-- 사진의 프라이머리키를 히든값에 저장 -->
 										<input type = "hidden" name = "photoUrl" value="${photo.photoUrl }"><!-- 사진의url을 히든값에 저장 -->
-										<input type = "submit" value = "수정" style = "float:right;"><!-- 사진을 수정하는 페이지로 이동하는 버튼 -->
+										<input id="btn2" type = "submit" value = "수정" style = "float:right;"><!-- 사진을 수정하는 페이지로 이동하는 버튼 -->
 									</form>
 									<c:choose>
 										<c:when test="${empty photo.photoUrl}"><!-- 등록되어있는 사진이 없으면 실행 -->
 											<img src="../photo/noimage.gif">
 										</c:when>
 										<c:otherwise><!-- 등록되어있는 사진이 있을 경우 실행 -->
-											<img src="../photo/${photo.photoUrl}"style = "width:350px; height:350px; "><!-- 등록한 사진을 출력 -->
+											<img id="img" src="../photo/${photo.photoUrl}"style = "width:350px; height:350px; "><!-- 등록한 사진을 출력 -->
 										</c:otherwise>
 									</c:choose>
 									<div class="photo_text">${photo.content }</div><!-- 등록한 사진의 내용을 출력 -->

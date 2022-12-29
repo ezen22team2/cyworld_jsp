@@ -47,7 +47,7 @@
 						<div class="home_contents">
 						
 							<!-- 방명록을 등록하는 페이지로 이동하는 버튼 -->
-							<input type = "button" value = "등록하기" style = "float:right;"onclick = "location.href = '../visit/visitWrite.do'">
+							<input id="insert_btn" type= "button" value = "등록하기" style = "float:right;"onclick = "location.href = '../visit/visitWrite.do'">
 							<div class="visit_contents" style = "margin-top:25px;">
 							<c:forEach var = "vlist" items = "${vlist }"><!-- 방명록을 출력 -->
 								<div class="visit_title">
@@ -72,11 +72,11 @@
 									<c:if test="${visitUser==logUser}"><!-- 방명록을 등록한 유저와 로그인된 유저의 아이디가 같으면 실행 -->
 									<form action = "../visit/visitdelete.do" method = "post"><!-- 방명록을 지우는 form태그 -->
 										<input type="hidden" name="deletevisit" value="${vlist.bno}"><!-- 방명록의 프라이머리키를 히든값에 저장 -->
-										<input type="submit" value="삭제" style="float:right;"><!-- 방명록을 삭제하는 버튼 -->
+										<input id="btn" type="submit" value="삭제" style="float:right;"><!-- 방명록을 삭제하는 버튼 -->
 									</form>
 									<form action = "../visit/visitupdate.do" method="get"><!-- 방명록을 수정하는 페이지로 이동하는 form 태그 -->
 										<input type = "hidden" name = "bno" value = "${vlist.bno }"	><!-- 방명록의 프라이머리키를 히든값에 저장 -->
-										<input type = "submit" value = "수정" style="float:right;"><!-- 방명록을 수정하는 버튼 -->
+										<input id="btn" type = "submit" value = "수정" style="float:right;"><!-- 방명록을 수정하는 버튼 -->
 									</form>
 									</c:if>
 									</div>
@@ -96,18 +96,18 @@
 									</c:when>
 								</c:choose>
 							</c:forEach>
-			                <div class="w3-border w3-padding" style="border: 1px solid;'">
+			                <div class="wrap w3-border w3-padding" style="background-color:#f5f5f5;">
 								<c:if test="${ loginUser.userid == null }"><!-- 로그인이 되어있지않으면 실행 -->
 									<textarea rows="5" cols="50" class="w3-input w3-border newLogin" readonly>로그인 후 댓글 달기</textarea>
 								</c:if>
 								<c:if test="${ loginUser.userid != null }"><!-- 로그인이 되어있으면 실행 -->
-									<i class="fa fa-user w3-padding-16"></i> ${ loginUser.userid }<!-- 유저아이디를 출력 -->
+									<i class="user_id fa fa-user w3-padding-16"></i> ${ loginUser.userid }<!-- 유저아이디를 출력 -->
 									<form action="../reply_vs/reply_vs.do" method="post"><!-- 댓글을 등록하는 form 태그 -->
 										<input type="hidden" name="bno" id="no" value="${ visit.bno }"> <!-- 다이어리의 프라이머리키를 히든값에 저장 -->
 										<input type="hidden" name="userid" id="id" value="${loginUser.userid }"><!-- 로그인되어있는 아이디를 히든값에 저장 -->
 										<!-- 댓글을 입력할 수 있는 텍스트창 -->
-										<textarea rows="5" cols="50" class="w3-input w3-border" placeholder="댓글 작성" name="content" id="reply_content"></textarea>
-										<input type="submit" class="w3-button w3-border" id="reply_btn" value="댓글 등록"><!-- 댓글을 등록하는 버튼 -->
+										<textarea id="textarea" rows="5" cols="50" class="w3-input w3-border" placeholder="댓글 작성" name="content" id="reply_content"></textarea>
+										<input id="inset_reply" type="submit" class="w3-button w3-border" id="reply_btn" value="댓글 등록"><!-- 댓글을 등록하는 버튼 -->
 									</form>
 								</c:if>
 							</div>

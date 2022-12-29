@@ -1,26 +1,19 @@
 @charset "UTF-8";
 /*달력*/
 .calendar{
-    display: flex;
-
-    position: absolute;
-    top: 15px;
-    bottom: 477px;
-    left: 40px;
-    right: 40px;
-
-    border: 1px solid silver;
-    border-radius: 5px;
-
     font-family: 'Nanum Gothic', sans-serif;
+    width:498px;height:30px;
+    margin-top:20px;
+    margin-left:15px;
+	box-shadow:1px 1px 2px 1px #cccccc; 
+    display:inline;
+    border:1px solid #cccccc;
 }
 .today{
     flex: 0.25;
-
     text-align: center;
     line-height: 22px;
     font-size: 16px;
-    
     color: steelblue;
 }
 .day_list{
@@ -58,12 +51,10 @@
 }
 .diary_text{
     color: black;
-
     text-align: center;
     line-height: 25px;
     font-size: 18px;
     font-family: 'Gamja Flower', cursive;
-
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -71,9 +62,7 @@
     margin-left: 170px;
     margin-top: 5px;
     margin-bottom: 10px;
-
     border: 0;
-
     font-size: 19px;
     color: white;
     background-color: white;
@@ -82,10 +71,55 @@
 #button:hover{
     color:black;
     background-color: whitesmoke;
-
     border: 1px solid silver;
     border-radius: 3px;
 }
 #hidden{
     display: none;
 }
+#btn{
+	background-color:white;
+	cursor:pointer;
+	margin-top:10px;
+	color:#333333;
+ 	border:1px solid #cccccc;
+ 	box-shadow:1px 1px 2px 1px #cccccc; 
+}
+.update_btn{padding-right:5px;border:1px solid gray;}
+#delete_btn{
+	border:none;
+	cursor:pointer;
+	background-color:white;
+	border:1px solid #cccccc;
+	border-radius:5px;
+	color:#333333;
+}
+#date_btn{
+	margin-left:150px;
+	margin-top:9px;
+	width:150px;
+	text-indent:18px;
+	border-color:#cccccc;
+	float:left;
+	cursor:pointer;
+}
+#search_btn{
+	float:left;
+	margin-top:9px;
+	margin-left:10px;
+	cursor:pointer;
+	background-color:white;
+	color:#333333;
+ 	border:1px solid #cccccc;
+ 	box-shadow:1px 1px 2px 1px #cccccc; 
+}
+.write_btn{float:left;cursor:pointer;}
+#reply_btn{
+	background-color:white;
+	cursor:pointer;
+	color:#333333;
+ 	border:1px solid #cccccc;
+ 	box-shadow:1px 1px 2px 1px #cccccc; 
+ 	margin-bottom:10px;
+}
+#reply_content{border:1px solid #cccccc;}
