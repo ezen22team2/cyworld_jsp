@@ -54,6 +54,7 @@ public class PhotoUpdateHandler implements CommandHandler {
 			photoUrl = multi.getParameter("photoUrl");
 		}
 		PhotoVO pVo = new PhotoVO();//사진 vo객체 생성
+		System.out.println(title);
 		pVo.setBno(bno);//vo에 사진번호를 저장
 		pVo.setTitle(title);//vo에 사진제목을 저장
 		pVo.setContent(content);//vo에 사진내용을 저장

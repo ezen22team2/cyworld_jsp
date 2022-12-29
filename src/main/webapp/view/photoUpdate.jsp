@@ -61,7 +61,7 @@
 										<td>
 									</tr>
 									<tr>
-										<td><input type="file" name="pictureUrl"><br><!-- 수정할 사진을 선택하는 버튼 -->
+										<td><input type="file" name="photoUrl"><br><!-- 수정할 사진을 선택하는 버튼 -->
 											(주의사항 : 이미지를 변경하고자 할때만 선택하시오)</td>
 									</tr>
 									<tr>

@@ -46,7 +46,6 @@ public class MemberDAO {
 			pstmt.setString(1, userid);//1번째로 받는 데이터는 유저아이디.
 			rs = pstmt.executeQuery();
 			if (rs.next()) {//다음이 없을때까지 진행
-				System.out.println("ok");
 				if (rs.getString("pwd") != null
 						&& BCrypt.checkpw(pwd, rs.getString("pwd"))) {//데이터베이스에서 가져온 패스워드가 있고, 가져온 패스워드와 입력된패스워드가 같으면 실행
 					result = 1;//result값에 1을 넣음.
@@ -103,7 +102,6 @@ public class MemberDAO {
 
 	public int confirmID(String userid) {
 		int result = -1;
-		System.out.println("테스트1");
 		String sql = "select userid from member_cy where userid=?";//입력된 유저아이디와 중복된 유저아이디가 있는지 확인
 		ResultSet rs = null;
 		try (Connection conn = getConnection();//데이터베이스와 통신
@@ -129,7 +127,6 @@ public class MemberDAO {
 
 	public int insertMember(MemberVO mVo) {
 		int result = -1;
-		System.out.println("테스트");
 		String sql = "insert into member_cy values(?, ?, ?, ?, ?, ?, ?)";//회원가입한 정보를 데이터베이스에 넣는 쿼리문
 		try (Connection conn = getConnection();//데이터베이스와 통신
 				PreparedStatement pstmt = conn.prepareStatement(sql); ) {//변수에 담아놓은 쿼리문을 데이터베이스에 넣어줌.

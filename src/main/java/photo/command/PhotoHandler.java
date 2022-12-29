@@ -36,8 +36,7 @@ public class PhotoHandler implements CommandHandler {
       return url;//변수에 저장된 url로 이동
    }
 
-   private String processSubmit(HttpServletRequest req, HttpServletResponse res) throws Exception {
-      String url = "../view/diary.jsp";   //이동할 url을 변수에 저장  
+   private String processSubmit(HttpServletRequest req, HttpServletResponse res) throws Exception { 
       int bno = Integer.parseInt(req.getParameter("bno"));//파라미터로 받은 사진번호를 Integer형으로 형변환후 변수에 저장
       String userid = req.getParameter("userid");//파라미터로 받은 유저아이디를 변수에 저장
       String content = req.getParameter("content");//파라미터로 받은 사진내용을 변수에 저장

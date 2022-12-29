@@ -36,17 +36,26 @@ public class HomeHandler implements CommandHandler{
 		int dcount = dDao.diarycount();//int타입의 변수에 diarycount에서 가져온 데이터를 저장
 		int pcount = dDao.photocount();//int타입의 변수에 photocount에서 가져온 데이터를 저장
 		int vcount = dDao.visitcount();//int타입의 변수에 visitcount에서 가져온 데이터를 저장
+		if(dDao.selectdiaryone() != null) {
+			DiaryVO diary = dDao.selectdiaryone();//DiaryVO타입의 변수에 selectdiaryone에서 가져온 데이터를 저장
+			String ddiary = diary.getContent();//가져온 변수에서 내용만 꺼내서 변수에 저장
+			req.setAttribute("diary", ddiary);//변수에 담긴 리스트를 setAttribute저장
+		}
+		if(dDao.selectphotoone() != null) {
+			PhotoVO photo = dDao.selectphotoone();//PhotoVO타입의 변수에 selectphotoone에서 가져온 데이터를 저장
+			String pphoto = photo.getContent();//가져온 변수에서 내용만 꺼내서 변수에 저장
+			req.setAttribute("photo", pphoto);//변수에 담긴 리스트를 setAttribute저장
+		}
+		if(dDao.selectvisitone() != null) {
+			VisitVO visit = dDao.selectvisitone();//VisitVO타입의 변수에 selectvisitone에서 가져온 데이터를 저장
+			String vvisit = visit.getContent();//가져온 변수에서 내용만 꺼내서 변수에 저장
+			req.setAttribute("visit", vvisit);//변수에 담긴 리스트를 setAttribute저장
+		}
 		
-		DiaryVO diary = dDao.selectdiaryone();//DiaryVO타입의 변수에 selectdiaryone에서 가져온 데이터를 저장
-		String ddiary = diary.getContent();//가져온 변수에서 내용만 꺼내서 변수에 저장
-		PhotoVO photo = dDao.selectphotoone();//PhotoVO타입의 변수에 selectphotoone에서 가져온 데이터를 저장
-		String pphoto = photo.getContent();//가져온 변수에서 내용만 꺼내서 변수에 저장
-		VisitVO visit = dDao.selectvisitone();//VisitVO타입의 변수에 selectvisitone에서 가져온 데이터를 저장
-		String vvisit = visit.getContent();//가져온 변수에서 내용만 꺼내서 변수에 저장
 		
-		req.setAttribute("diary", ddiary);//변수에 담긴 리스트를 setAttribute저장
-		req.setAttribute("photo", pphoto);//변수에 담긴 리스트를 setAttribute저장
-		req.setAttribute("visit", vvisit);//변수에 담긴 리스트를 setAttribute저장
+		
+		
+		
 		
 		req.setAttribute("dcount", dcount);//변수에 담긴 리스트를 setAttribute저장
 		req.setAttribute("pcount", pcount);//변수에 담긴 리스트를 setAttribute저장

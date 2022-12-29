@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import common.command.CommandHandler;
-import common.command.NullHandler;
 
 public class ControllerUsingURI extends HttpServlet {
 
@@ -64,9 +63,6 @@ public class ControllerUsingURI extends HttpServlet {
 			command = command.substring(request.getContextPath().length());
 		}
         CommandHandler handler = commandHandlerMap.get(command);
-        if (handler == null) {
-            handler = new NullHandler();
-        }
         String viewPage = null;
         try {
             viewPage = handler.process(request, response);
