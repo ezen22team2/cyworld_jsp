@@ -1,42 +1,48 @@
 #wrap {
-	width: 971px; /* 1024*768로 해상도를 맞추어서 설계 */
-	/* 가운데 정렬을 위한 바깥쪽 여백 설정 */
+	width: 600px; /* 1024*768濡� �빐�긽�룄瑜� 留욎텛�뼱�꽌 �꽕怨� */
+	/* 媛��슫�뜲 �젙�젹�쓣 �쐞�븳 諛붽묑履� �뿬諛� �꽕�젙 */
 	margin: 0;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 h1 {
-	color: green; /* 글 색상 */
+	color: #ea5f1c; /* 湲� �깋�긽 */
 }
 
 table {
 	width: 100%;
 	border-collapse: collapse;
-	font-size: 12px; /* 글꼴 크기 */
-	line-height: 24px; /* 줄 간격 */
+	font-size: 12px; /* 湲�瑗� �겕湲� */
+	line-height: 24px; /* 以� 媛꾧꺽 */
 }
 
 table td,th {
-	border: #d3d3d3 solid 1px; /* 경계선 색상 스타일 굵기 */
-	padding: 5px; /* 안쪽 여백 */
+	border: #d3d3d3 solid 1px; /* 寃쎄퀎�꽑 �깋�긽 �뒪���씪 援듦린 */
+	padding: 5px; /* �븞履� �뿬諛� */
 }
 
 th {
-	background: yellowgreen; /* 배경색 */
+	background: #ea5f1c; /* 諛곌꼍�깋 */
+}
+table td input{
+	margin-left:10px;
+}
+table td textarea{
+	margin-left:15px;
 }
 
 img {
-	width: 220px; /* 이미지 너비(가로) */
-	height: 300px; /* 이미지 높이(세로) */
+	width: 220px; /* �씠誘몄� �꼫鍮�(媛�濡�) */
+	height: 300px; /* �씠誘몄� �넂�씠(�꽭濡�) */
 }
 
 a {
-	text-decoration: none; /* 링크 밑줄 없애기 */
-	color: black; /* 글 색상 */
+	text-decoration: none; /* 留곹겕 諛묒쨪 �뾾�븷湲� */
+	color: black; /* 湲� �깋�긽 */
 }
 
 a:HOVER {
-	text-decoration: underline; /* 밑줄 */
-	color: green; /* 글 색상 */
+	text-decoration: underline; /* 諛묒쨪 */
+	color: green; /* 湲� �깋�긽 */
 }

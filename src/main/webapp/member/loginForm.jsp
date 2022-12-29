@@ -31,8 +31,8 @@
 					<a onclick="location.href='${jurl}'">회원가입</a>
 				</td>	
 			</tr>
-			<tr>
-				<td colspan="2">${message}</td>
+			<tr id="message">
+				<td colspan="2" align="center">${message}</td>
 			</tr>
 		</table>
 	</form>

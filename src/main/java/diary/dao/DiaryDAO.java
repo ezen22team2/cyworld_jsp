@@ -24,7 +24,7 @@ public class DiaryDAO {
 	}
 	
 	public List<DiaryVO> selectDiary(DiaryVO dvo) {
-		
+		System.out.println("selectDiary");
 		String sql = "select * from diary where date(updatedate)= ? order by bno desc";//diary에서 날짜순으로 desc해서 변수에 저장
 		List<DiaryVO> list = new ArrayList<DiaryVO>();//diaryVO 리스트 타입의 객체를 생성
 		try(Connection conn = DBManager.getConnection();//데이터베이스와 통신
@@ -34,6 +34,7 @@ public class DiaryDAO {
 			while(rs.next()) {//다음이 없을때까지 진행
 				DiaryVO dVo = new DiaryVO();//diartVO 객체 생성
 				dVo.setBno(rs.getInt("bno"));//객체 안에 받아온 다이어리번호를 넣어줌.
+				System.out.println(rs.getInt("bno"));
 				dVo.setTitle(rs.getString("title"));//객체 안에  받아온 제목을 넣어줌.
 				dVo.setContent(rs.getString("content"));//객체 안에  받아온 내용을 넣어줌.
 				dVo.setUpdatedate(rs.getString("updatedate"));//객체 안에  받아온 받아온 작성날짜를 넣어줌
@@ -48,6 +49,7 @@ public class DiaryDAO {
 	
 
 	public void insertDiary(DiaryVO	dvo) {
+		System.out.println("insertDiary");
 		String sql = "insert into diary(title, content) values(?,?)";//작성한 다이어리 데이터를 데이터베이스에 넣어주는 쿼리문
 		try (Connection conn = DBManager.getConnection();//데이터베이스와 통신
 			PreparedStatement pstmt = conn.prepareStatement(sql);) {//변수에 담아놓은 쿼리문을 데이터베이스에 넣어줌.
@@ -60,6 +62,7 @@ public class DiaryDAO {
 	}
 
 	public DiaryVO selectOneBoardByBno(int bno) {
+		System.out.println("selectOneBoardByBno");
 		String sql = "select * from diary where bno = ?";//보낸 프라이머리 키와 같은 다이어리를 가져오는 쿼리문
 		DiaryVO dVo = null;
 		ResultSet rs = null;
@@ -73,7 +76,6 @@ public class DiaryDAO {
 				dVo.setTitle(rs.getString("title"));//vo객체안에 가져온 다이어리 제목을 저장
 				dVo.setContent(rs.getString("content"));//vo객체안에 가져온  다이어리 내용을 저장
 				dVo.setUpdatedate(rs.getString("updatedate"));//vo객체안에 가져온 다이어리 작성날짜를 저장
-			
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -84,6 +86,7 @@ public class DiaryDAO {
 	}
 
 	public void updateDiary(DiaryVO dVo) {
+		System.out.println("updateDiary");
 		String sql = "update diary set title=?, content=?, updatedate=? where bno=?";//다이어리를 수정하는 쿼리문
 		try (Connection conn = DBManager.getConnection();//데이터베이스와 통신
 			PreparedStatement pstmt = conn.prepareStatement(sql); ) {//변수에 담아놓은 쿼리문을 데이터베이스에 넣어줌.
@@ -99,6 +102,7 @@ public class DiaryDAO {
 
 
 	public void deleteDiary(int bno) {
+		System.out.println("deleteDiary");
 		String sql = "delete from diary where bno=?";//가져온 다이어리번호와 같은 다이어리 row를 지우는 쿼리문
 		try (Connection conn = DBManager.getConnection();//데이터베이스와 통신
 			PreparedStatement pstmt = conn.prepareStatement(sql); ) {//변수에 담아놓은 쿼리문을 데이터베이스에 넣어줌.
@@ -111,6 +115,7 @@ public class DiaryDAO {
 
 	
 	public List<DiaryVO> getSeletLeast() {
+		System.out.println("getSeletLeast");
 		String sql = "select * from diary order by bno desc limit 10;";//다이어리 작성순서대로 10개만 가져오는 쿼리문
 		List<DiaryVO> list = new ArrayList<DiaryVO>();//리스트타입의 객체 생성
 		try (Connection conn = DBManager.getConnection();){//데이터베이스와 통신

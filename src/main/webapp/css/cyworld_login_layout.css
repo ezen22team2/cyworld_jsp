@@ -52,6 +52,7 @@ body{font:normal 15px/1.5em Arial,sans-serif;color:#333333;background-color:#ea5
 }
 #buttons a:hover{text-decoration:underline;}
 
+#message{font-size:13px; color:red;text-decoration:underline;}
 
 
 
