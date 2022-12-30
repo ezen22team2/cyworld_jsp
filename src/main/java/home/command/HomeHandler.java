@@ -53,10 +53,6 @@ public class HomeHandler implements CommandHandler{
 		}
 		
 		
-		
-		
-		
-		
 		req.setAttribute("dcount", dcount);//변수에 담긴 리스트를 setAttribute저장
 		req.setAttribute("pcount", pcount);//변수에 담긴 리스트를 setAttribute저장
 		req.setAttribute("vcount", vcount);//변수에 담긴 리스트를 setAttribute저장

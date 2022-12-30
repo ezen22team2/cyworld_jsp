@@ -6,12 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import common.command.CommandHandler;
-import diary.dao.DiaryDAO;
-import diary.dto.DiaryVO;
-import member.dao.MemberDAO;
-import member.dto.MemberVO;
-import reply.dao.ReplyDAO;
-import reply.dto.ReplyVO;
 import reply_vs.dao.Reply_vsDAO;
 import reply_vs.dto.Reply_vsVO;
 import visit.dao.VisitDAO;
